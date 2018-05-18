@@ -1,0 +1,43 @@
+#		python code
+#		script_name: U2M4Pratice
+#
+#		author: Stephanie Dobson
+#		description: making music using the beatstrings
+#
+
+#setUp
+from earsketch import *
+init()
+setTempo(140)
+
+#musicMain
+initialBeat= "0-0+++00-0+--0000"
+mainInstr = DUBSTEP_DRUMLOOP_MAIN_001
+
+def expander(beatString):
+  newBeat = ""
+  for i in range(0,len(beatString)):
+    beatSlice = beatString[0:i]
+    newBeat = newBeat + beatString
+  return newBeat
+
+finalBeat= expander(initialBeat)
+print finalBeat
+
+makeBeat(mainInstr,1,1,finalBeat)
+
+#otherMusic
+rhythm1 = "0+--000+0+--0000"
+rhythm2 = "0-0+++00----0000+-"
+rhythm3 = "0-0+0--000+++0000"
+rhythm4 = "0+++0--+00000+--00000-"
+lowTom = OS_LOWTOM01
+snare = OS_SNARE01
+
+finalLowTom = rhythm1 + rhythm2
+finalSnare = rhythm3 + rhythm4
+
+makeBeat(lowTom,2,10,finalLowTom)
+makeBeat(snare,3,10,finalSnare)
+
+finish()
