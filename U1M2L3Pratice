@@ -1,0 +1,25 @@
+#		python code
+#		script_name: U1M2L3Pratice
+#
+#		author: Stephanie Dobson
+#		description: demonstrates some basic functions 
+#
+
+from earsketch import *
+
+init()
+setTempo(120)
+print(input())
+print(round(9.99999988888888,7))
+print(abs(-9000))
+print(hex(9000))
+myPower=pow(45,2)
+print(myPower)
+mySum=[1,4,5]
+print(sum(mySum))
+myVariable=39034838793.238728749873
+print(type(myVariable))
+myList=['a','h','u','d','s','f','k','j']
+print(sorted(myList))
+print(range(6,36,3))
+finish()
