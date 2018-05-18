@@ -1,0 +1,38 @@
+#		python code
+#		script_name: ABA Song
+#
+#		author: Stephanie Dobson
+#		description: plays a song in the A-B-A pattern 
+#
+
+#setUp
+from earsketch import *
+init()
+setTempo(120)
+
+#music
+bell= YG_GOSPEL_BELLS_1
+guitar = YG_GOSPEL_GUITAR_3
+brass = YG_GOSPEL_BRASS_1
+
+#Custom Functions
+def sectionA(startMeasure,endMeasure):
+  fitMedia(bell,1,startMeasure,endMeasure)
+  fitMedia(guitar,2,startMeasure,endMeasure)
+  for measure in range (startMeasure,endMeasure):
+    fitMedia(bell,3,measure,measure + 1)
+  for measure in range (startMeasure,endMeasure,2):
+    fitMedia(bell,4,measure,measure + 1)
+
+def sectionB(startMeasure,endMeasure):
+  fitMedia(guitar,1,startMeasure,endMeasure)
+  fitMedia(brass,3,startMeasure,endMeasure)
+  distortionValue= int(readInput("Enter a number between 0 and 50 for distortion."))
+  setEffect(4, DISTORTION, DISTO_GAIN, distortionValue)
+
+#music
+sectionA(1,5)
+sectionB(5,9)
+sectionA(9,13)
+
+finish()
